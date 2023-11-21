@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function listProductsPagination(Request $request){
 
-        $urlValorx = 'http://valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23ListItems&Compania=0054&Sucursal=02';
+        $urlValorx = 'http://valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23ListItems&Compania=0078&Sucursal=01';
 
         $response = Http::post($urlValorx, $data = [
             "lista_precio" => $request->lista_precio,
