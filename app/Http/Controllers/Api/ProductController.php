@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function listProductsPagination(Request $request){
 
-        $urlValorx = 'http://valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23ListItems&Compania=0078&Sucursal=01';
+        $urlValorx = 'http://valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23ListItems&Compania='.$request->compania.'&Sucursal='.$request->sucursal;
 
         $response = Http::post($urlValorx, $data = [
             "lista_precio" => $request->lista_precio,
@@ -32,7 +32,7 @@ class ProductController extends Controller
     }
 
     public function searchClient(Request $request){
-        $urlValorx = "http://www.valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23Shopper&Compania=0078&Sucursal=01";
+        $urlValorx = 'http://www.valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23Shopper&Compania='.$request->compania.'&Sucursal='.$request->sucursal;
 
         $response = Http::post($urlValorx, $data = [
             "nrodocid" => $request->nrodocid,
