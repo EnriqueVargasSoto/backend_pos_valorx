@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('list-products', [ProductController::class, 'listProductsPagination']);
 Route::post('search-client', [ProductController::class, 'searchClient']);
 Route::post('save-sale', [ProductController::class, 'saveSale']);
+Route::post('categories', [ProductController::class, 'categories']);

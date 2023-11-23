@@ -80,4 +80,15 @@ class ProductController extends Controller
 
         return response()->json($sale);
     }
+
+    public function categories(Request $request){
+        $urlValorx = 'http://www.valorx.net/Magicxpi4.12/MgWebRequester.dll?appname=IFSValorX&prgname=HTTP&arguments=-AHTTPVLXRest%23ListCateg&Compania='.$request->compania.'&Sucursal='.$request->sucursal;
+
+        $response = Http::post($urlValorx);
+
+        $categories = json_decode($response, true);
+
+
+        return response()->json($categories);
+    }
 }
