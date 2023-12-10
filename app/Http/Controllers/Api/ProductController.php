@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+//use Barryvdh\DomPDF\PDF;
+//use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use PDF;
 
 class ProductController extends Controller
 {
@@ -78,7 +81,11 @@ class ProductController extends Controller
         //$data = iconv('ISO-8859-1', 'UTF-8', $response);
         $sale = json_decode($response, true);
 
-        return response()->json($sale);
+        $html = '<html><body><h1>Detalles de la Venta</h1><p>Contenido de la venta...</p></body></html>';
+        $pdf = PDF::loadHTML($html);
+
+        return $pdf->download('venta.pdf');
+        //return response()->json($sale);
     }
 
     public function categories(Request $request){

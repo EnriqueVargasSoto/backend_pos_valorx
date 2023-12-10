@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::post('list-products', [ProductController::class, 'listProductsPagination'
 Route::post('search-client', [ProductController::class, 'searchClient']);
 Route::post('save-sale', [ProductController::class, 'saveSale']);
 Route::post('categories', [ProductController::class, 'categories']);
+
+Route::post('login', [AuthController::class, 'login']);
