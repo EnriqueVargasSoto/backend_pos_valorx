@@ -18,7 +18,8 @@ class ProductController extends Controller
         $response = Http::post($urlValorx, $data = [
             "lista_precio" => $request->lista_precio,
             "pagina" => $request->pagina,
-            "filtroxnombre" => $request->filtroxnombre
+            "filtroxnombre" => $request->filtroxnombre,
+            "filtroxcategoria" => $request->filtroxcategoria,
         ]);
         //$response = str_replace('b"""', "", $response);
         $response = str_replace("\n", "", $response);

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::post('save-sale', [ProductController::class, 'saveSale']);
 Route::post('categories', [ProductController::class, 'categories']);
 
 Route::post('login', [AuthController::class, 'login']);
+
+Route::post('save-order', [OrderController::class, 'orderSave']);
