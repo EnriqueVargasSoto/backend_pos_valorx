@@ -82,11 +82,11 @@ class ProductController extends Controller
         //$data = iconv('ISO-8859-1', 'UTF-8', $response);
         $sale = json_decode($response, true);
 
-        $html = '<html><body><h1>Detalles de la Venta</h1><p>Contenido de la venta...</p></body></html>';
-        $pdf = PDF::loadHTML($html);
+        //$html = '<html><body><h1>Detalles de la Venta</h1><p>Contenido de la venta...</p></body></html>';
+        //$pdf = PDF::loadHTML($html);
 
-        return $pdf->download('venta.pdf');
-        //return response()->json($sale);
+        //return $pdf->download('venta.pdf');
+        return response()->json($sale);
     }
 
     public function categories(Request $request){
