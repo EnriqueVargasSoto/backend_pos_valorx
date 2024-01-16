@@ -65,8 +65,8 @@ class ProductController extends Controller
             "fecha_comprobante" => $request->fecha_comprobante,//' : '2023-11-21',
             "vendedor" => $request->vendedor,//' : '10247812',
             "lista_precio" => $request->lista_precio,//' : environment.lista_precio,
-            "nro_documento_ide" => $request->nro_document_ide,//' : this.client.nrodocide,
-            "cliente" => $request->client,//' : this.client.client,
+            "nro_documento_ide" => $request->nro_documento_ide,//' : this.client.nrodocide,
+            "cliente" => $request->cliente,//' : this.client.client,
             "forma_pago" => $request->forma_pago,//' : "001",
             "moneda" => $request->moneda,//' : 'PEN',
             "detalle_sales" => $request->detalle_sales,//' : bodyDetail
