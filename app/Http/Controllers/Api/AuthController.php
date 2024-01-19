@@ -18,8 +18,12 @@ class AuthController extends Controller
             "usuario" => $request->usuario,
             "password" => $request->password
         ]);
-        $user = json_decode($response, true);
-
+        $response = str_replace("\n", "", $response);
+        $response = str_replace("\r", "", $response);
+        $data = iconv('ISO-8859-1', 'UTF-8', $response);
+        //dd($response->json());
+        $user = json_decode($data, true);
+        //dd($user);
         return response()->json($user);
     }
 }
